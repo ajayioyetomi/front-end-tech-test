@@ -69,7 +69,7 @@ const Wrapper = styled.footer`
   padding:20px 0;
   background-image:url('/assets/footer-back.png');
   background-position: center bottom;
-  background-size: cover;
+  background-size: 100% cover;
   justify-content: center;
   align-items: center;
   & > div{
@@ -79,6 +79,12 @@ const Wrapper = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (width <= 650px) {
+      flex-direction: column;
+      justify-content: center;
+      gap:10px;
+    }
+
   }
   
 `

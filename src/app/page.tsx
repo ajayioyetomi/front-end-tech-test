@@ -601,6 +601,7 @@ const NCard = styled.div`
   display: flex;
   background-color:  var(--gray-background);
   flex-direction: column;
+  border-radius: 5px;
   & > div:first-of-type{
     font-size:40px;
     color:var(--white-color);
