@@ -132,11 +132,7 @@ export default function Home() {
           />
         </span>
         <WrapperText>
-          <div>
-            
-            The worlds first platform for Tokenizing AI blockchain projects
-
-          </div>
+          <div>The worlds first platform for Tokenizing AI blockchain projects</div>
           <div>
             Hold the Creon Pass NFT and earn passive income from AI Tools
           </div>

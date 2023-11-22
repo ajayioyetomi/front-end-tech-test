@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { SlMenu as MenuIcon } from "react-icons/sl";
 import {FaTimes as CancelIcon} from 'react-icons/fa';
 import styled from 'styled-components';
-import {useState} from 'react';
+import {useState,useEffect,useRef} from 'react';
 
 const MDSCREEN:string = '1024px';
 type ListType ={
@@ -37,11 +37,32 @@ const list = [
 
 const Header = () => {
   const [show,set_show] = useState<boolean>(false);
+  const headerRef = useRef<HTMLHeadElement | null | undefined | any > ()
   const handleContent = () =>{
     set_show(!show);
   }
+  const handleScroll = ()=>{
+    let h = window.scrollY;
+    if(h > 50){
+      if(headerRef && headerRef.current){
+         headerRef.current.style.backgroundColor = 'black';
+      }
+
+    }else{
+      if(headerRef && headerRef.current){
+        headerRef.current.style.backgroundColor = 'transparent';
+     }
+    }
+  }
+
+  useEffect(()=>{
+    handleScroll();
+    window.addEventListener('scroll',handleScroll);
+
+    return ()=> window.removeEventListener('scroll',handleScroll);
+  },[])
   return (
-    <header className="flex bg-transparent fixed top-0 left-0 z-10 py-5 px-3 justify-between w-full items-center sm:px-7">
+    <header ref={headerRef} className="flex bg-transparent fixed top-0 left-0 z-10 py-5 px-3 justify-between w-full items-center sm:px-7">
       <Logo href="/">
         <Image 
           alt="logo" 
