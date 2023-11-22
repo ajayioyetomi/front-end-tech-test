@@ -3,6 +3,9 @@ import type { Author } from 'next/dist/lib/metadata/types/metadata-types';
 import { Inter } from 'next/font/google'
 import './globals.css';
 import { Header,Footer } from '@/components';
+import StyledComponentsRegistry from '@/lib/registry'
+ 
+
 
 const inter = Inter({ subsets: ['latin'] })
 const author = 'AJAYI TAIWO OYETOMI' as Author;
@@ -20,9 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+       
+        <StyledComponentsRegistry>
+          <Header />
+          {children}
+          <Footer />
+        </StyledComponentsRegistry>
+        
       </body>
     </html>
   )

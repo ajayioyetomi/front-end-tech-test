@@ -7,10 +7,40 @@
   --white-background:#fff;
   --black-color:#000;
   --black-background:#000;
+  --purple-color:#AB23FF;
 }
 
 @media (prefers-color-scheme: dark) {
   
+}
+
+@layer components{
+  .notice{
+    @apply bg-black text-purple-500 rounded-lg relative;
+    padding:3px 8px;
+    top:-10px;
+  }
+  .menu{
+    @apply flex bg-white rounded-md justify-center items-center text-lg lg:hidden; 
+    width:35px;
+    height:35px;
+  }
+  .menu-2{
+    @apply flex bg-blue-700 text-white rounded-md justify-center items-center text-lg; 
+    width:35px;
+    height:35px;
+  }
+  .container{
+    @apply w-screen h-screen relative lg:fixed lg:w-fit lg:h-fit
+  }
+  .hide-ham{
+    @apply flex-col top-0 left-0 z-50;  
+
+  }
+  .show-ham{
+    @apply flex-row top-0;
+  }
+
 }
 
 body {
