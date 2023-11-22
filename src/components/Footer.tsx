@@ -1,9 +1,16 @@
+"use client"
 import React from 'react'
+import styled from 'styled-components';
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <Wrapper>Footer</Wrapper>
   )
 }
 
-export default Footer
+export default Footer;
+
+
+const Wrapper = styled.footer`
+  
+`

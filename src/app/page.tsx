@@ -11,8 +11,21 @@ type MType={
   title:string | any;
   content:string;
   icon:string;
+}
 
+type FType={
+  id:number,
+  title:string,
+  content:string;
+  image:string;
+}
 
+type NType={
+  id:number;
+  header:string;
+  title:string;
+  content:string;
+  image:string;
 }
 
 const Mlist:MType[] = [
@@ -47,6 +60,50 @@ const Mlist:MType[] = [
     icon:`/assets/limitless.svg`
   }
 
+]
+const Flist: FType[] =[
+  {
+    id:1,
+    title:'AI Prospects, Market Size, and Development Pace',
+    content:'The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.',
+    image:'/assets/image-1.png'
+  },
+  {
+    id:2,
+    title:'AI Tools and Market',
+    content:'AI tools refer to the technologies and software that enable computer systems to perform tasks usually requiring human intellect. The market for these tools is dynamic and diverse, encompassing areas such as Natural Language Processing (NLP), machine learning, computer vision, and robotics. With a wide range of applications, AI tools are becoming increasingly indispensable in many sectors, from healthcare to finance, retail, manufacturing, and many others.',
+    image:'/assets/image-2.png'
+  },
+  {
+    id:3,
+    title:'AI, Crypto, and NFT Market',
+    content:'Artificial Intelligence and blockchain technology are two groundbreaking areas leading new technological innovations. The combination of these two technologies creates intriguing possibilities. For instance, Non-Fungible Tokens (NFTs) can leverage AI to create unique digital artworks or to provide exclusive AI-based services. Meanwhile, cryptocurrencies can benefit from AI by improving security mechanisms, transaction efficiency, and service personalization. Such combination brings substantial benefits for both developers and users, paving the way for unprecedented possibilities.',
+    image:'/assets/image-3.png'
+  },
+  
+]
+const Nlist:NType[] = [
+  {
+    id:1,
+    header:'token',
+    title:'The Gateway token to the world of AI',
+    content:'Set to debut in the latter half of 2024, the CREON token serves as the pioneering link between cutting-edge AI initiatives and blockchain technology. This innovative token provides NFT and token holders with unparalleled access to our Launchpad, AI tools, and exclusive pre-launch investment prospects.',
+    image:'/assets/frame-1.png'
+  },
+  {
+    id:2,
+    header:'revenue',
+    title:'Driving income and growth through decentralization',
+    content:'CREON NFT and token holders are integral participants in the profit-sharing from our launched AI-based enterprises. We support the development of AI tools, ensuring a steady revenue stream, all while allowing early investors to enjoy the benefits of their support.',
+    image:'/assets/frame-2.png'
+  },
+  {
+    id:2,
+    header:'launchpad',
+    title:'Driving the future of AI Innovation',
+    content:'The Creon AI Launchpad, an essential component of our initiative, represents a groundbreaking opportunity in the realm of AI and blockchain. It provides the first known platform for acquiring allocations in tokenized AI projects, offering our community of NFT and CREON token holders early access to innovative and promising AI endeavors.',
+    image:'/assets/frame-3.png'
+  }
 ]
 export default function Home() {
   const [active_mission,set_active_mession] = useState<null | number>(null);
@@ -129,15 +186,65 @@ export default function Home() {
         </div>
         
       </SecondSection>
-      <ThirdSection className=''>
+      <TSection className=''>
         <div>
           <div>
             <span>Profiting through</span>
             <span>AI Innovation & Decentralization</span>
           </div>
-          <div></div>
+          <div>
+            <div>
+              <Image
+                src="/assets/profit-back.png"
+                objectFit='cover'
+                objectPosition='center'
+                fill
+                priority
+                alt="image"
+              />
+            </div>
+            <div>
+              <div>
+              The dynamic community driven business model of the future.
+              </div>
+              <p>
+                At Creon, we blend the power of AI tools with the dynamic crypto and NFT markets, utilizing an innovative business model to drive profitability. This approach empowers our community, as our NFT and token holders directly benefit from the growth and prosperity of the Creon network, creating a win-win scenario for both our community and for the projects we launch.
+              </p>
+            </div>
+          </div>
         </div>
-      </ThirdSection>
+      </TSection>
+      <FSection>
+        <div>
+          {
+            Flist.map((eList:FType) => <FCard key={eList.id}>
+              <div>
+                <div>{eList.title}</div>
+                <p>{eList.content}</p>
+              </div>
+              <div className='relative'>
+                <Image 
+                  alt="image"
+                  src={eList.image}
+                  objectFit='cover'
+                  objectPosition='center'
+                  priority
+                  fill
+                />
+              </div>
+
+            </FCard>
+              
+            )
+          }
+
+        </div>
+      </FSection>
+      <NSection>
+        <div>
+
+        </div>
+      </NSection>
     </main>
   )
 }
@@ -189,7 +296,7 @@ const WrapperText = styled.div`
   }
   
 `
-const SecondSection = styled.div`
+const SecondSection = styled.section`
   padding:50px 0;
   display:flex;
   justify-content: center;
@@ -272,17 +379,19 @@ const MCard = styled.div`
   }
 `;
 
-const ThirdSection = styled.div`
+const TSection = styled.section`
   display:flex;
   justify-content: center;
   align-items: center;
   width:100%;
   padding:50px 0px;
+  margin-bottom: 30px;
   & > div{
     width:var(--main-width);
     padding:20px;
     display:flex;
     flex-direction: column;
+    gap:30px;
     & > div:first-of-type{
       width:100%;
       display:flex;
@@ -297,6 +406,9 @@ const ThirdSection = styled.div`
           font-family: var(--regular-font-ex);
           align-self: flex-start;
           font-size:2.5rem;
+          @media screen and (width < 630px) {
+            font-size:1.4rem;
+          }
         }
         &:nth-of-type(2){
           background:linear-gradient(to right, #3D8BFF,#AB23FF);
@@ -304,13 +416,145 @@ const ThirdSection = styled.div`
           -webkit-text-fill-color: transparent;
           align-self: flex-end;
           font-size:1.8rem;
+          @media screen and (width < 630px) {
+            font-size:1.3rem;
+            text-align: right;
+          }
 
         }
       }
     }
     & > div:nth-of-type(2){
-      
+      display:flex;
+      width:100%;
+      gap:20px;
+      & > div{
+        position: relative;
+        
+        &:first-of-type{
+          width:calc(60% - 10px);
+          height:350px;
+        }
+        &:nth-of-type(2){
+          width:calc(40% - 10px);
+          border-left:1px solid var(--line-color);
+          border-right:1px solid var(--line-color);
+          color:var(--white-color);
+          display: flex;
+          flex-direction: column;
+          padding:0 20px;
+          justify-content: center;
+          gap:20px;
+          & > div{
+            font-size: 1.3rem;
+          }
+          & > p{
+            font-size:.9rem;
+
+          }
+
+        }
+      }
+      @media screen and (width <= 850px){
+        flex-direction: column;
+        & > div{
+          width:100% !important;
+          &:nth-of-type(2){
+            padding:30px 0;
+            border-right:none;
+            border-left:none;
+            border-top:1px solid var(--line-color);
+            border-bottom:1px solid var(--line-color);
+
+          }
+        }
+      }
     }
+  }
+`
+
+const FSection = styled.section`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  & > div{
+    width:var(--main-width);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding:20px;
+    gap:20px;
+    @media screen and (width <= 680px ) {
+      display: grid;
+      grid-template-columns: 250px 250px 250px;
+      overflow:auto;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+    }
+    
+
+  }
+`
+
+const FCard = styled.div`
+  display: flex;
+  height: 250px;
+  & > div{
+    &:first-of-type{
+      padding:20px;
+      color:var(--white-color);
+      background-color: var(--gray-background);
+      flex:1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      & > div{
+        font-size:32px;
+        line-height:1;
+        @media screen and (width <= 870px){
+          font-size:22px;
+        }
+      }
+      & > p{
+        margin:0;
+        font-size:14px;
+      }
+      @media screen and (width <= 680px ) {
+        align-content: start;
+        
+      }
+
+    }
+    &:nth-of-type(2){
+      height:100%;
+      width:270px;
+      @media screen and (width <= 680px ) {
+        height:200px;
+        width:100%;
+        
+      }
+    }
+  }
+  @media screen and (width <= 870px){
+    height:370px;
+  }
+  @media screen and (width <= 680px ) {
+    flex-direction: column-reverse;
+    height:auto;
+
+  }
+
+  
+`
+const NSection = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > div{
+    display: grid;
+    width:var(--main-width);
+    gap:30px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `
 
