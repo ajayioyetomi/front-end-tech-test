@@ -119,7 +119,7 @@ export default function Home() {
   }
   return (
     <main>
-      <section className={`relative px-5 flex justify-start h-85 lg:h-screen lg:justify-center`}>
+      <section  className={`relative px-5 flex justify-start h-85 lg:h-screen lg:justify-center`}>
         <span className='w-full h-full absolute top-0 left-0 cover' >
           <Image
             className="w-full h-full "
@@ -242,6 +242,27 @@ export default function Home() {
       </FSection>
       <NSection>
         <div>
+          {
+            Nlist.map(eList =>
+              <NCard key={eList.id}>
+                <div>{eList.header}</div>
+                <p>{eList.title}</p>
+                <div className='relative w-95w h-200 '>
+                  <Image src={eList.image}
+                    alt="image"
+                    objectFit='cover'
+                    objectPosition='center'
+                    priority
+                    fill
+                  />
+                </div>
+                <p>
+                  {eList.content}
+                </p>
+
+              </NCard>  
+            )
+          }
 
         </div>
       </NSection>
@@ -297,6 +318,7 @@ const WrapperText = styled.div`
   
 `
 const SecondSection = styled.section`
+  background-color: var(--black-background);
   padding:50px 0;
   display:flex;
   justify-content: center;
@@ -380,12 +402,13 @@ const MCard = styled.div`
 `;
 
 const TSection = styled.section`
+  background-color: var(--black-background);
   display:flex;
   justify-content: center;
   align-items: center;
   width:100%;
-  padding:50px 0px;
-  margin-bottom: 30px;
+  padding:50px 0px 80px;
+  ;
   & > div{
     width:var(--main-width);
     padding:20px;
@@ -474,6 +497,7 @@ const TSection = styled.section`
 `
 
 const FSection = styled.section`
+  background-color: var(--black-background);
   display:flex;
   justify-content: center;
   align-items: center;
@@ -499,6 +523,8 @@ const FSection = styled.section`
 const FCard = styled.div`
   display: flex;
   height: 250px;
+  overflow: hidden;
+  border:3px;
   & > div{
     &:first-of-type{
       padding:20px;
@@ -512,7 +538,7 @@ const FCard = styled.div`
         font-size:32px;
         line-height:1;
         @media screen and (width <= 870px){
-          font-size:22px;
+          font-size:25px;
         }
       }
       & > p{
@@ -541,20 +567,65 @@ const FCard = styled.div`
   @media screen and (width <= 680px ) {
     flex-direction: column-reverse;
     height:auto;
-
+      
   }
 
   
 `
 const NSection = styled.section`
+  background-image: url('/assets/footer-back.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top:50px;
   & > div{
     display: grid;
     width:var(--main-width);
     gap:30px;
     grid-template-columns: 1fr 1fr 1fr;
+    padding:20px;
+    @media screen and (width <= 750px ) {
+      gap:20px;
+      grid-template-columns: 250px 250px 250px;
+      overflow:auto;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+    }
+  }
+  padding-bottom:80px;
+`
+const NCard = styled.div`
+  display: flex;
+  background-color:  var(--gray-background);
+  flex-direction: column;
+  & > div:first-of-type{
+    font-size:40px;
+    color:var(--white-color);
+    text-transform:uppercase;
+    padding:0 20px;
+    @media screen and (width <= 870px){
+          font-size:25px;
+        }
+  }
+  & > div:nth-of-type(2){
+    border-radius: 0 3px 3px 0;
+    overflow: hidden;
+  }
+  & > p:first-of-type{
+    background:linear-gradient(to right, #3D8BFF,#AB23FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:.9rem;
+    height:50px;
+    padding:0 20px;
+  }  
+  & > p:nth-of-type(2){
+    padding:20px;
+    color:var(--white-color);
+    font-size:.8rem;
   }
 `
 

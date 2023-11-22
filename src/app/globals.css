@@ -95,7 +95,6 @@
 body {
   margin:0;
   padding:0;
-  background-color: var(--black-background);
 }
 @media screen and (width <=1150px) {
     :root{
