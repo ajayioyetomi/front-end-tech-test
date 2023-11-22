@@ -28,8 +28,20 @@ const config: Config = {
       width:{
         '300':'300px',
       },
+      height:{
+        '200':'200px',
+        '250':'250px',
+        '70':'70vh',
+        '75':'75vh',
+        '80':'80vh',
+        '85':'85vh',
+        '90':'85vh',
+        '95':'95vh'
+      },
       text:{
         'small':'8px',
+        'satoshi':'var(--regular-font)',
+        'satoshi-ex':'var(--reglar-font-ex)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -7,7 +7,11 @@ import styled from 'styled-components';
 import {useState} from 'react';
 
 const MDSCREEN:string = '1024px';
-
+type ListType ={
+  name:string;
+  active:boolean;
+  href:string;
+}
 const list = [
   {
     name:'Croen Pass',
@@ -59,8 +63,8 @@ const Header = () => {
                   <CancelIcon />
                 </button>
               </li>
-              {list.map(eList =><li>
-                  <Link key={eList.name} href={eList.href}>
+              {list.map((eList:ListType )=><li key={eList.name} >
+                  <Link  href={eList.href}>
                   <span >{eList.name}</span >
                   {!eList.active ?<span >SOON</span>:''}
                   </Link>
@@ -116,6 +120,8 @@ const Wrapper = styled(Container)`
       height:100%;
       top:0;
       left:0;
+      backdrop-filter: blur(1.9px);
+      -webkit--backdrop-filter: blur(1.9px);
     }
   }
   & > ul{
@@ -153,7 +159,7 @@ const Wrapper = styled(Container)`
           padding:6px;
         }
         
-        border-bottom:1px solid rgb(30,30,30);
+        border-bottom:1px solid var(--line-color);
       }
       
     }
