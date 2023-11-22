@@ -122,11 +122,11 @@ export default function Home() {
       <section  className={`relative px-5 flex justify-start h-85 lg:h-screen lg:justify-center`}>
         <span className='w-full h-full absolute top-0 left-0 cover' >
           <Image
-            className="w-full h-full "
-            src="/assets/banner.svg"
+            className='w-full h-full'
+            src='/assets/banner.svg'
             objectFit='cover'
             objectPosition='center'
-            alt="Banner"
+            alt='Banner'
             fill
             priority
           />
@@ -151,11 +151,11 @@ export default function Home() {
             </div>
             <div className='relative w-full h-200 sm:h-250'>
               <Image
-                src="/assets/se-banner.png"
+                src='/assets/se-banner.png'
                 objectFit='cover'
                 objectPosition='center'
                 fill
-                alt="image"
+                alt='image'
               />
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function Home() {
                     src={eList.icon}
                     width={60}
                     height={60}
-                    alt="image"
+                    alt='image'
                   />
                 </div>
                 <div>
@@ -195,12 +195,12 @@ export default function Home() {
           <div>
             <div>
               <Image
-                src="/assets/profit-back.png"
+                src='/assets/profit-back.png'
                 objectFit='cover'
                 objectPosition='center'
                 fill
                 priority
-                alt="image"
+                alt='image'
               />
             </div>
             <div>
@@ -224,7 +224,7 @@ export default function Home() {
               </div>
               <div className='relative'>
                 <Image 
-                  alt="image"
+                  alt='image'
                   src={eList.image}
                   objectFit='cover'
                   objectPosition='center'
@@ -249,7 +249,7 @@ export default function Home() {
                 <p>{eList.title}</p>
                 <div className='relative w-95w h-200 '>
                   <Image src={eList.image}
-                    alt="image"
+                    alt='image'
                     objectFit='cover'
                     objectPosition='center'
                     priority
