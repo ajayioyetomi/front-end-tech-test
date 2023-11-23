@@ -28,6 +28,7 @@ type NType={
   image:string;
 }
 
+
 const Mlist:MType[] = [
   {
     id:1,
@@ -236,6 +237,44 @@ export default function Home() {
 
         </div>
       </FSection>
+      <LSection>
+        <div>
+          <div>
+            <div>
+              creon pass nft
+            </div>
+            <p>
+              Access to confidential AI tools enabling business optimization and development. Only NFT holders will have the ability to use a given tool.
+            </p>
+            <div>
+              <p>
+                Prospect to derive financial benefits through the redistributed profit generated from AI tools, but only when the majority of NFT holders decide to release the tool publicly.
+              </p>
+              <div>
+                <p>
+                  The possibility of allocating investments into new, exceptional tokenized AI tools through Creon Launchpad.
+                </p>
+                <p>
+                  Early access to allocations in inspiring tokenized projects, real businesses based on AI.
+                </p>
+              </div>
+            </div>
+            <Button>
+              Buy Creon Pass
+            </Button>
+          </div>
+          <div>
+            <Image
+              src='/assets/L-Image.png'
+              alt="image"
+              objectFit='cover'
+              objectPosition='center'
+              fill
+              priority
+            />
+          </div>
+        </div>
+      </LSection>
       <NSection>
         <div>
           {
@@ -262,6 +301,7 @@ export default function Home() {
 
         </div>
       </NSection>
+
     </main>
   )
 }
@@ -598,6 +638,18 @@ const NCard = styled.div`
   background-color:  var(--gray-background);
   flex-direction: column;
   border-radius: 5px;
+  position: relative;
+  &::before{
+    content:'coming soon';
+    text-transform: uppercase;
+    background-color: var(--white-color);
+    padding:3px 8px;
+    border-radius: 10px;
+    position: absolute;
+    top:-10px;
+    right:20px;
+    font-size:.55rem;
+  }
   & > div:first-of-type{
     font-size:40px;
     color:var(--white-color);
@@ -624,5 +676,104 @@ const NCard = styled.div`
     color:var(--white-color);
     font-size:.8rem;
   }
+`
+
+const LSection = styled.section`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-color);
+  padding:30px 0;
+  & > div{
+    width:var(--main-width);
+    display: flex;
+    align-items: center;
+    gap:20px;
+    padding:0 20px;
+    & > div{
+      width:calc(50% - 10px);
+      &:first-of-type{
+        & > div:first-of-type{
+          font-size:38px;
+          color:var(--white-color);
+          text-transform: uppercase;
+        }
+        & > p:first-of-type{
+          background:linear-gradient(to right, #3D8BFF,#AB23FF);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin:30px 0 0;
+        }
+        & > div:last-of-type{
+          width:100%;
+          display: flex;
+          flex-wrap: wrap;
+          padding:30px 0;
+          font-weight: 300;
+          gap:20px;
+          & > p{
+            padding:0;
+            margin:0;
+            color:var(--white-color);
+            padding:13px;
+            border: 1px solid var(--line-color);
+            border-radius:8px
+          }
+          & > div{
+            display:flex;
+            gap:20px;
+            flex-direction: column;
+            & > p{
+              padding:0;
+              margin:0;
+              color:var(--white-color);
+              padding:13px;
+              border: 1px solid var(--line-color);
+              border-radius:8px
+            }
+            @media screen and (width <= 1024px) {
+              flex-direction: row;
+            }
+            @media screen and (width <= 790px) {
+              flex-direction: column;
+            }
+          }
+        }
+
+
+      }
+      &:nth-of-type(2){
+         height:90dvh;
+         position: relative;
+
+      }
+    }
+    @media screen and (width <= 790px) {
+      &:nth-of-type(2){
+          height:450px;
+        }
+    }
+    @media screen and (width <= 767px){
+      flex-direction: column-reverse;
+      & > div{
+        width:100% !important;
+        &:nth-of-type(2){
+          height:400px;
+        }
+      }
+    }
+
+
+  }
+`
+const Button = styled.button`
+  color:var(--white-color);
+  background: linear-gradient(to right, #3D8BFF,#AB23FF) ;
+  padding:12px 0;
+  width:220px;
+  border-radius: 5px;
+  @media screen and (width <= 600px){
+      width:100%;
+    }
 `
 
