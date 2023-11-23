@@ -765,6 +765,9 @@ const LSection = styled.section`
 
 
   }
+  @media screen and (width <= 790px) {
+      padding-top:80px;
+    }
 `
 const Button = styled.button`
   color:var(--white-color);
