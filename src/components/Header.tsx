@@ -62,7 +62,7 @@ const Header = () => {
     return ()=> window.removeEventListener('scroll',handleScroll);
   },[])
   return (
-    <header ref={headerRef} className="flex bg-transparent fixed top-0 left-0 z-10 py-5 px-3 justify-between w-full items-center sm:px-7">
+    <header ref={headerRef} className="flex bg-transparent fixed top-0 left-0 py-5 px-3 justify-between w-full items-center sm:px-7 z-50">
       <Logo href="/">
         <Image 
           alt="logo" 
@@ -124,6 +124,7 @@ const Wrapper = styled(Container)`
   position: relative;
   width:fit-content;
   display: flex;
+  z-index: 99999;
   @media screen and (width < ${MDSCREEN}) {
     position: fixed;
     width:100dvw;

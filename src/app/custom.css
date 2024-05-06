@@ -1,0 +1,18 @@
+.text-design{
+    background:linear-gradient(to right, #3D8BFF,#AB23FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:18px;
+    width:fit-content;
+    position:relative;
+  }
+
+.text-design::before,.text-design::after{
+    content:'';
+    display: block;
+    width:100%;
+    height:1px;
+    background:linear-gradient(to right, #3D8BFF,#AB23FF) ;
+    margin:0;
+}

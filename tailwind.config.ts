@@ -7,14 +7,19 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    
     extend: {
+      fontFamily:{
+        'satoshi-ex':['Satoshi-Ex'],
+      },
       screens: {
+        'xs':'300px',
         'sm': '640px',
         // => @media (min-width: 640px) { ... }
   
         'md': '768px',
         // => @media (min-width: 768px) { ... }
+
+        'mlg':'840px',
   
         'lg': '1024px',
         // => @media (min-width: 1024px) { ... }
@@ -26,8 +31,11 @@ const config: Config = {
         // => @media (min-width: 1536px) { ... }
       },
       width:{
+        '900':'900px',
         '300':'300px',
-        '95w':'95%'
+        '95w':'95%',
+        '5/12':'calc(50% - 10px)',
+        'list':'calc(100% - 80px)'
       },
       height:{
         '200':'200px',
@@ -37,7 +45,8 @@ const config: Config = {
         '80':'80vh',
         '85':'85vh',
         '90':'85vh',
-        '95':'95vh'
+        '95':'95vh',
+        '500':'500px',
       },
       text:{
         'small':'8px',
@@ -48,8 +57,22 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      }, 
+      backgroundColor: {
+        'gray-black':'var(--gray-background)',
+      },  
+      colors:{
+        'gray-black':'var(--gray-background)',
       },
+      minWidth:{
+        '800':'800px',
+      }
     },
+  },
+  variants:{
+    extends:{
+      
+    }
   },
   plugins: [],
 }

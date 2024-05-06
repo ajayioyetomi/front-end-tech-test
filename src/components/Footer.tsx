@@ -24,28 +24,30 @@ const list = [
 
 const Footer = () => {
   return (
-    <Wrapper>
-      <div>
-        <span>
-          &copy; Creon 2023. All rights reserved.
-        </span>
-        <span className='flex gap-5'>
-          {list.map((eList:any,index:number )=>
-              <a key={index} href="#" className='relative'>
-              <Image src={eList.src}
-                alt={eList.alt}
-                width={30}
-                height={30}
-                priority
-              />
-            </a>
-            )}
-          
-          
-     
-        </span>
-        <span className='flex items-center gap-2'>
-          Powered by
+    <footer className='relative z-10 w-full flex py-5 justify-center items-center'>
+      <div className='px-5 md:px-0 main-width text-white flex justify-between flex-row items-center flex-wrap gap-2'>
+        <div className='flex gap-2 flex-wrap'>
+          <span className='text-white'>
+            &copy; Creon 2023. All rights reserved.
+          </span>
+          <span className='flex gap-5'>
+            {list.map((eList:any,index:number )=>
+                <a key={index} href="#" className='relative'>
+                <Image src={eList.src}
+                  alt={eList.alt}
+                  width={30}
+                  height={30}
+                  priority
+                />
+              </a>
+              )}
+            
+            
+      
+          </span>
+        </div>
+        <span className='self-start md:self-auto flex items-center gap-2 text-lg grow'>
+          <span>Powered&nbsp;by</span>
           <span className='relative w-24'>
             <Image
               alt="footer image"
@@ -57,34 +59,8 @@ const Footer = () => {
           </span>
         </span>
       </div>
-    </Wrapper>
+    </footer>
   )
 }
 
 export default Footer;
-
-
-const Wrapper = styled.footer`
-  display:flex;
-  padding:20px 0;
-  background-image:url('/assets/footer-back.png');
-  background-position: center bottom;
-  background-size: 100% cover;
-  justify-content: center;
-  align-items: center;
-  & > div{
-    padding:0 20px;
-    width:var(--main-width);
-    color:var(--white-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @media screen and (width <= 650px) {
-      flex-direction: column;
-      justify-content: center;
-      gap:10px;
-    }
-
-  }
-  
-`
