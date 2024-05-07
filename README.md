@@ -17,3 +17,4 @@ To run locally in production: first run "npm install" to install all the necessa
 
 ## About Author
 My name is Ajayi Taiwo Oyetomi, I'm a passionate, experienced, and resourceful full-stack developer. Looking forward to joining your team and working with the team.
+Checkout this project live on https://front-end-tech-test-one.vercel.app/ or [click here](https://front-end-tech-test-one.vercel.app/)
