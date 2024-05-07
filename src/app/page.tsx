@@ -32,7 +32,7 @@ export default function Home() {
         </span>
         <div className='flex flex-col relative z-10 self-end  w-900 banner-bottom'>
           <div className='text-white uppercase lg:text-5xl mb-5 font-satoshi-ex sm:text-2xl '>The worlds first platform for Tokenizing AI blockchain projects</div>
-          <div className='top-gradient-text lg:text-lg xs:text-xs'>
+          <div className='top-gradient-text bg-gradient-linear relative w-fit lg:text-lg xs:text-xs'>
             Hold the Creon Pass NFT and earn passive income from AI Tools
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function Home() {
             <div className='text-white uppercase xs:text-3xl lg:text-7xl'>
               creon pass nft
             </div>
-            <p className="gradient-text lg:text-2xl xs:text-xl">
+            <p className="gradient-text lg:text-2xl xs:text-xl my-8">
               Access to confidential AI tools enabling business optimization and development. Only NFT holders will have the ability to use a given tool.
             </p>
             <div className='w-full my-10 flex-wrap flex-col flex xs:gap-5 md:gap-10 text-white'>
@@ -61,19 +61,11 @@ export default function Home() {
               Revenue share distribution from Creon built AI projects
               </p>
             </div>
-            <Button>
+            <button className='text-white bg-gradient-linear w-full py-3 mlg:w-7/12 rounded-sm'>
               Buy Creon Pass
-            </Button>
+            </button>
           </div>
           <div className='lg:w-5/12 lg:h-screen md:h-500 sm:w-full  relative'>
-            {/* <Image
-              src='/assets/L-Image.png'
-              alt="image"
-              objectFit='cover'
-              objectPosition='center'
-              fill
-              priority
-            /> */}
              <video poster="/assets/L-Image.png" className='w-full h-full object-fill object-center' muted autoPlay loop preload="none">
             <source src="/assets/nft-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -85,7 +77,7 @@ export default function Home() {
         <div className='main-width lg:h-screen'>
             <div className='flex flex-col md:my-20 xs:my-10 md:gap-5 xs:gap-2'>
               <span className='self-center mlg:self-start text-white mlg:text-7xl sm:text-5xl xs:text-4xl'>Profiting through</span>
-              <span className='self-center mlg:self-end gradient-text-2 mlg:text-5xl sm:text-3xl xs:text-xl'>AI Innovation & Decentralization</span>
+              <span className='self-center mlg:self-end gradient-text mlg:text-5xl sm:text-3xl xs:text-xl'>AI Innovation & Decentralization</span>
             </div>
             <div className='flex gap-14 mlg:flex-row xs:flex-col'>
               <div className='mlg:w-3/5 flex relative xs:w-full'>
@@ -109,13 +101,15 @@ export default function Home() {
         <div className='main-width flex xs:my-5 flex-col  mlg:flex-row '>
           <div className='xs:w-full mlg:w-3/5 '>
             <div className='text-white xs:text-2xl text-center mlg:text-5xl mlg:text-left'>
-              Our vision is to support the innovation of AI blockchain projects <span className='gradient-text-2'>while prioritizing communities and democratizing profits</span>
+              Our vision is to support the innovation of AI blockchain projects <span className='gradient-text'>while prioritizing communities and democratizing profits</span>
             </div>
             <div className='relative w-full h-200 sm:h-250 mt-5'>
               <Image
                 src='/assets/se-banner.png'
-                objectFit='cover'
-                objectPosition='center'
+                style={{
+                  objectFit:'cover',
+                  objectPosition:'center'
+                }}
                 fill
                 alt='image'
               />
@@ -154,12 +148,14 @@ export default function Home() {
                 Nlist.map(eList =>
                   <div className='bg-gray-black relative list-grid py-5 px-3 h-full' key={eList.id}>
                     <div className='text-white text-4xl uppercase'>{eList.header}</div>
-                    <p className='gradient-text-2 my-3 h-12'>{eList.title}</p>
+                    <p className='gradient-text my-3 h-12'>{eList.title}</p>
                     <div className='relative -left-3 w-95w h-200 my-5'>
                       <Image src={eList.image}
                         alt='image'
-                        objectFit='cover'
-                        objectPosition='center'
+                        style={{
+                          objectFit:'cover',
+                          objectPosition:'center'
+                        }}
                         priority
                         fill
                       />
@@ -182,25 +178,27 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className='relative main-width z-10 flex flex-col gap-10 '>
+        <div className='relative main-width z-10 px-5 flex flex-col gap-10 mb-7 '>
         {
-          Flist.map((eList:FType) => <FCard key={eList.id}>
-            <div>
-              <div>{eList.title}</div>
-              <p>{eList.content}</p>
+          Flist.map((eList:FType) => <div className='bg-gray-black flex gap-5 flex-col-reverse md:flex-row' key={eList.id}>
+            <div className='relative p-5 text-white'>
+              <div className='text-2xl md:text-5xl'>{eList.title}</div>
+              <p className='mt-5'>{eList.content}</p>
             </div>
-            <div className='relative'>
+            <div className='relative flex w-full md:w-300 h-250 md:h-300 shrink-0'>
               <Image 
                 alt='image'
                 src={eList.image}
-                objectFit='cover'
-                objectPosition='center'
+                style={{
+                  objectFit:'cover',
+                  objectPosition:'center'
+                }}
                 priority
                 fill
               />
             </div>
 
-          </FCard>
+          </div>
             
           )
         }
@@ -213,160 +211,4 @@ export default function Home() {
   )
 }
 
-const FSection = styled.section`
-  background-color: var(--black-background);
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  & > div{
-    width:var(--main-width);
-    display: grid;
-    grid-template-columns: 1fr;
-    padding:20px;
-    gap:20px;
-    @media screen and (width <= 680px ) {
-      display: grid;
-      grid-template-columns: 250px 250px 250px;
-      overflow:auto;
-      &::-webkit-scrollbar {
-        width: 10px;
-      }
-    }
-    
-
-  }
-`
-
-const FCard = styled.div`
-  display: flex;
-  height: 250px;
-  overflow: hidden;
-  border:3px;
-  & > div{
-    &:first-of-type{
-      padding:20px;
-      color:var(--white-color);
-      background-color: var(--gray-background);
-      flex:1;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      & > div{
-        font-size:32px;
-        line-height:1;
-        @media screen and (width <= 870px){
-          font-size:25px;
-        }
-      }
-      & > p{
-        margin:0;
-        font-size:14px;
-      }
-      @media screen and (width <= 680px ) {
-        align-content: start;
-        
-      }
-
-    }
-    &:nth-of-type(2){
-      height:100%;
-      width:270px;
-      @media screen and (width <= 680px ) {
-        height:200px;
-        width:100%;
-        
-      }
-    }
-  }
-  @media screen and (width <= 870px){
-    height:370px;
-  }
-  @media screen and (width <= 680px ) {
-    flex-direction: column-reverse;
-    height:auto;
-      
-  }
-
-  
-`
-const NSection = styled.section`
-  background-image: url('/assets/footer-back.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top:50px;
-  & > div{
-    display: grid;
-    width:var(--main-width);
-    gap:30px;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding:20px;
-    @media screen and (width <= 750px ) {
-      gap:20px;
-      grid-template-columns: 250px 250px 250px;
-      overflow:auto;
-      &::-webkit-scrollbar {
-        width: 10px;
-      }
-    }
-  }
-  padding-bottom:80px;
-`
-const NCard = styled.div`
-  display: flex;
-  background-color:  var(--gray-background);
-  flex-direction: column;
-  border-radius: 5px;
-  position: relative;
-  &::before{
-    content:'coming soon';
-    text-transform: uppercase;
-    background-color: var(--white-color);
-    padding:3px 8px;
-    border-radius: 10px;
-    position: absolute;
-    top:-10px;
-    right:20px;
-    font-size:.55rem;
-  }
-  & > div:first-of-type{
-    font-size:40px;
-    color:var(--white-color);
-    text-transform:uppercase;
-    padding:0 20px;
-    @media screen and (width <= 870px){
-          font-size:25px;
-        }
-  }
-  & > div:nth-of-type(2){
-    border-radius: 0 3px 3px 0;
-    overflow: hidden;
-  }
-  & > p:first-of-type{
-    background:linear-gradient(to right, #3D8BFF,#AB23FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size:.9rem;
-    height:50px;
-    padding:0 20px;
-  }  
-  & > p:nth-of-type(2){
-    padding:20px;
-    color:var(--white-color);
-    font-size:.8rem;
-  }
-`
-
-const Button = styled.button`
-  color:var(--white-color);
-  background: linear-gradient(to right, #3D8BFF,#AB23FF) ;
-  padding:12px 0;
-  width:70%;
-  border-radius: 5px;
-  @media screen and (width <= 600px){
-      width:100%;
-    }
-`
 

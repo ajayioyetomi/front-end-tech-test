@@ -33,6 +33,7 @@ const config: Config = {
       width:{
         '900':'900px',
         '300':'300px',
+        '250':'210px',
         '95w':'95%',
         '5/12':'calc(50% - 10px)',
         'list':'calc(100% - 80px)'
@@ -40,6 +41,7 @@ const config: Config = {
       height:{
         '200':'200px',
         '250':'250px',
+        '300':'300px',
         '70':'70vh',
         '75':'75vh',
         '80':'80vh',
@@ -48,15 +50,8 @@ const config: Config = {
         '95':'95vh',
         '500':'500px',
       },
-      text:{
-        'small':'8px',
-        'satoshi':'var(--regular-font)',
-        'satoshi-ex':'var(--reglar-font-ex)',
-      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-linear': 'linear-gradient(to right, #3D8BFF,#AB23FF)',
       }, 
       backgroundColor: {
         'gray-black':'var(--gray-background)',
@@ -66,7 +61,11 @@ const config: Config = {
       },
       minWidth:{
         '800':'800px',
+      },
+      fontSize:{
+        'ssx':'10px'
       }
+
     },
   },
   variants:{

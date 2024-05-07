@@ -103,16 +103,12 @@
   }
 
   .top-gradient-text{
-    background:linear-gradient(to right, #3D8BFF,#AB23FF);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    width:fit-content;
-    position:relative;
-
   }
   
-  .top-gradient-text::before,.text-design::after{
+  .top-gradient-text::before,.top-gradient-text::after{
     content:'';
     display: block;
     width:100%;
@@ -122,14 +118,9 @@
   }
 
   .gradient-text{
-    background:linear-gradient(to right, #3D8BFF,#AB23FF);
+    @apply bg-gradient-linear;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin:30px 0 0;
-  }
-  .gradient-text-2{
-    background:linear-gradient(to right, #3D8BFF,#AB23FF);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -146,9 +137,15 @@
     content:'COMING SOON';
     padding:5px 10px;
     border-radius: 8px;
-    top:-20px;
+    top:-15px;
     background-color:var(--white-background);
     color:var(--black-color);
+  }
+
+  .blur{
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(1.9px);
+    -webkit--backdrop-filter: blur(1.9px);
   }
   
 }
