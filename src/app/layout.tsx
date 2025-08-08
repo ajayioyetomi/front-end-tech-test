@@ -10,7 +10,7 @@ import StyledComponentsRegistry from '@/lib/registry'
 const inter = Inter({ subsets: ['latin'] })
 const author = 'AJAYI TAIWO OYETOMI' as Author;
 export const metadata: Metadata = {
-  title: 'Frontend Tech Test',
+  title: 'Frontend Creon',
   description: 'Frontend application created by Ajayi Taiwo Oyetomi',
   authors:[author]
 }
